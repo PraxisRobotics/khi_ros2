@@ -5,7 +5,7 @@ find_package(ament_cmake REQUIRED)
 find_package(khi_description REQUIRED)
 
 install(
-  DIRECTORY launch
+  DIRECTORY launch worlds
   DESTINATION share/${PROJECT_NAME}
 )
 

@@ -40,5 +40,21 @@
     <disable_collisions link1="${prefix}link4" link2="${prefix}link5" reason="Adjacent" />
     <disable_collisions link1="${prefix}link4" link2="${prefix}link6" reason="Never" />
     <disable_collisions link1="${prefix}link5" link2="${prefix}link6" reason="Adjacent" />
+    <disable_collisions link1="${prefix}link2" link2="${prefix}parallel_arm2" reason="Adjacent" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}base_link" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}link1" reason="Adjacent" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}link2" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}link3" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}link4" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}link5" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}link6" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm1" link2="${prefix}parallel_arm2" reason="Adjacent" />
+    <disable_collisions link1="${prefix}parallel_arm2" link2="${prefix}base_link" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm2" link2="${prefix}link1" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm2" link2="${prefix}link2" reason="Adjacent" />
+    <disable_collisions link1="${prefix}parallel_arm2" link2="${prefix}link3" reason="Adjacent" />
+    <disable_collisions link1="${prefix}parallel_arm2" link2="${prefix}link4" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm2" link2="${prefix}link5" reason="Never" />
+    <disable_collisions link1="${prefix}parallel_arm2" link2="${prefix}link6" reason="Never" />
   </xacro:macro>
 </robot>

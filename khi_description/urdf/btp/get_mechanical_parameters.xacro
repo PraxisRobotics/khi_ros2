@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:property name="is_parallel" value="false"/>
+  <xacro:if value="${robot_name == 'bx300l-b001'}">
+    <xacro:property name="is_parallel" value="true"/>
+  </xacro:if>
+  <xacro:unless value="${robot_name == 'bx300l-b001'}">
+    <xacro:property name="is_parallel" value="false"/>
+  </xacro:unless>
 
   <xacro:property name="mech_para_path" value="$(find khi_description)/config/$(arg robot_series)/$(arg robot_name)/mechanical_parameters.yaml"/>
   <xacro:property name="mechanical_parameters" value="${xacro.load_yaml(mech_para_path)}"/>

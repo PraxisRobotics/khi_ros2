@@ -44,15 +44,16 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "robot",
             choices=[
+                "btp210l-a001",
+                "bx300l-b001",
+                "bxp135x-a001",
+                "bxp210l-a001",
                 "rs007l-b001",
                 "rs015x-a001",
                 "rs013n-a001",
                 "rs025n-a001",
                 "rs080n-a001",
-                "bx300l-b001",
-                "bxp135x-a001",
                 "wd003h-f502",
-                "bxp210l-a001",
             ],
             description="robot name",
         )
@@ -112,12 +113,14 @@ def launch_setup(context, *args, **kwargs):
     robot_controller = LaunchConfiguration("robot_controller")
 
     robot_series = ""
-    if "rs" in str(robot.perform(context)):
-        robot_series = "rs"
+    if "btp" in str(robot.perform(context)):
+        robot_series = "btp"
     if "bx" in str(robot.perform(context)):
         robot_series = "bx"
     if "bxp" in str(robot.perform(context)):
         robot_series = "bxp"
+    if "rs" in str(robot.perform(context)):
+        robot_series = "rs"
     if "wd" in str(robot.perform(context)):
         robot_series = "wd"
 
@@ -189,6 +192,9 @@ def launch_setup(context, *args, **kwargs):
         PythonLaunchDescriptionSource(
             [PathJoinSubstitution([FindPackageShare("gazebo_ros"), "launch", "gazebo.launch.py"])]
         ),
+        launch_arguments=[
+            ("world", PathJoinSubstitution([FindPackageShare("khi_gazebo"), "worlds", "no_ground.world"]))
+        ],
     )
     spawn_gazebo = Node(
         package="gazebo_ros",

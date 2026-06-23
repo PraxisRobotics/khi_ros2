@@ -257,7 +257,7 @@ hardware_interface::return_type KhiHardwareInterface::write(
   {
     write_enabled_ = false;
     driver_->deactivate();
-    set_state(rclcpp_lifecycle::State(
+    set_lifecycle_state(rclcpp_lifecycle::State(
       lifecycle_msgs::msg::State::PRIMARY_STATE_INACTIVE,
       hardware_interface::lifecycle_state_names::INACTIVE));
     return hardware_interface::return_type::OK;
